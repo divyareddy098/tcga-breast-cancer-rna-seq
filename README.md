@@ -1,110 +1,111 @@
-# 🧬 Transcriptomic Analysis of Immune Response Using Bulk RNA-seq (DESeq2)
+# 🧬 Transcriptomic Analysis of Breast Cancer Using TCGA RNA-seq (DESeq2)
 
-## 🎯 Project Goal
-
-Performed differential gene expression analysis on bulk RNA-seq data to identify immune-related genes and pathways involved in biological response.
-
----
-
-## 📌 Overview
-
-This project analyzes bulk RNA-seq data to identify differentially expressed genes (DEGs) and characterize immune-related biological pathways.
-
-The workflow includes:
-
-* data preprocessing
-* differential expression analysis
-* visualization
-* functional enrichment analysis
-
-This pipeline reflects real-world transcriptomic analysis used in immunology and disease research.
+## Project Goal
+Developing a transcriptomic analysis pipeline to perform differential gene expression analysis on TCGA breast cancer RNA-seq data and identify subtype-associated genes and biological pathways.
 
 ---
 
-## 🚀 Key Features
+## Overview
+In this project, I am building a bulk RNA-seq analysis workflow using TCGA breast cancer data to identify differentially expressed genes (DEGs) and characterize subtype-specific transcriptional patterns.
 
-* Differential gene expression analysis using **DESeq2**
-* Identification of significantly upregulated and downregulated genes
-* PCA-based visualization of sample variation
-* Functional enrichment analysis using **clusterProfiler**
-* Visualization using ggplot2
+This pipeline reflects standard transcriptomic workflows used in cancer genomics research.
 
 ---
 
-## 📂 Project Structure
+## Workflow Overview
 
-```
-rna-seq-immune-analysis/
-│── README.md
-│── scripts/
-│── data/
-│── results/
-│── figures/
-```
+1. Data preprocessing and normalization  
+2. Differential gene expression analysis (DESeq2)  
+3. Visualization (PCA, volcano plot)  
+4. Functional enrichment analysis (GO / pathways)  
 
 ---
 
-## ⚙️ Workflow
+## Key Features
+
+- Differential gene expression analysis using DESeq2  
+- Identification of subtype-associated genes  
+- PCA-based visualization of sample variation  
+- Functional enrichment analysis using clusterProfiler  
+- Reproducible and modular analysis pipeline  
+
+---
+
+## Project Structure
+
+tcga-rna-seq-breast-cancer/  
+│── scripts/  
+│── data/  
+│── results/  
+│── figures/  
+│── README.md  
+
+---
+
+## Workflow Details
 
 ### 1️⃣ Data Preprocessing
-
-* Load count matrix and metadata
-* Normalize RNA-seq counts
+- Load TCGA RNA-seq count matrix and clinical metadata  
+- Normalize gene expression counts  
 
 ### 2️⃣ Differential Expression Analysis
-
-* Perform DESeq2 analysis
-* Identify significantly differentially expressed genes
+- Perform DESeq2 analysis across breast cancer subtypes  
+- Identify significantly differentially expressed genes  
 
 ### 3️⃣ Visualization
-
-* PCA plot for sample clustering
-* Volcano plot for DEGs
+- PCA plot for sample clustering  
+- Volcano plot for differential expression  
 
 ### 4️⃣ Functional Enrichment
-
-* Gene Ontology (GO) enrichment
-* Pathway analysis using clusterProfiler
-
----
-
-## 📈 Example Output
-
-* List of differentially expressed genes
-* PCA plot showing sample separation
-* Volcano plot of gene expression changes
-* Enriched immune pathways
+- Gene Ontology (GO) enrichment  
+- Pathway analysis using clusterProfiler  
 
 ---
 
-## 🛠️ Tools & Technologies
+## Status
 
-* R (DESeq2, clusterProfiler, ggplot2)
-* Python (pandas, NumPy)
-
----
-
-## 💡 Skills Demonstrated
-
-* RNA-seq data analysis
-* Differential gene expression
-* Functional enrichment analysis
-* Data visualization
-* Bioinformatics pipeline development
+This project is currently in progress. The analysis pipeline structure is implemented, and differential expression and enrichment analyses are being developed.
 
 ---
 
-## 🎯 Impact
+## Expected Outputs
 
-This project demonstrates analysis of immune-related transcriptomic data and reflects workflows used in:
-
-* immunology research
-* disease biomarker discovery
-* functional genomics
+- List of differentially expressed genes  
+- PCA plot showing subtype separation  
+- Volcano plot of gene expression changes  
+- Enriched biological pathways  
 
 ---
 
-## 👩‍💻 Author
+## Tools & Technologies
 
-Divya Reddy
-MS Bioinformatics | Georgia Tech
+- R: DESeq2, clusterProfiler, ggplot2  
+- Python: pandas, NumPy  
+
+---
+
+## Skills Demonstrated
+
+- Bulk RNA-seq analysis  
+- Differential gene expression  
+- Cancer genomics analysis  
+- Functional enrichment analysis  
+- Data visualization  
+- Bioinformatics pipeline development  
+
+---
+
+## Impact
+
+This project demonstrates transcriptomic analysis of breast cancer data and reflects workflows used in:
+
+- Cancer genomics research  
+- Biomarker discovery  
+- Precision medicine  
+
+---
+
+## Author
+
+Divya Reddy  
+MS Bioinformatics, Georgia Institute of Technology  
