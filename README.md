@@ -1,88 +1,141 @@
-# 🧬 Transcriptomic Analysis of Breast Cancer Using TCGA RNA-seq (DESeq2)
+# 🧬 TCGA Breast Cancer RNA-seq Analysis
 
-## Project Goal
-Developing a transcriptomic analysis pipeline to perform differential gene expression analysis on TCGA breast cancer RNA-seq data and identify subtype-associated genes and biological pathways.
+## Differential Expression, Subtype Characterization, and Biological Interpretation
 
 ---
 
 ## Overview
-In this project, I am building a bulk RNA-seq analysis workflow using TCGA breast cancer data to identify differentially expressed genes (DEGs) and characterize subtype-specific transcriptional patterns.
 
-This pipeline reflects standard transcriptomic workflows used in cancer genomics research.
+This project presents a comprehensive analysis of RNA-seq data from The Cancer Genome Atlas (TCGA) Breast Cancer (BRCA) cohort.
 
----
+The objective is to identify subtype-specific transcriptional differences and derive biological insights across major breast cancer subtypes using established statistical and bioinformatics methods.
 
-## Workflow Overview
-
-1. Data preprocessing and normalization  
-2. Differential gene expression analysis (DESeq2)  
-3. Visualization (PCA, volcano plot)  
-4. Functional enrichment analysis (GO / pathways)  
+The analysis integrates:
+- Differential gene expression  
+- Dimensionality reduction  
+- Functional enrichment  
 
 ---
 
-## Key Features
+## Dataset
 
-- Differential gene expression analysis using DESeq2  
-- Identification of subtype-associated genes  
-- PCA-based visualization of sample variation  
-- Functional enrichment analysis using clusterProfiler  
-- Reproducible and modular analysis pipeline  
+- **Source:** TCGA BRCA RNA-seq (Illumina HiSeq)  
+- **Sample size:** ~1000 tumor samples  
+
+### Subtypes (PAM50 classification):
+- Luminal A (reference)
+- Luminal B
+- HER2-enriched
+- Basal-like
+- Normal-like
+
+---
+
+## Methods
+
+### Data Preprocessing
+
+- Converted data into sample × gene matrix  
+- Removed low-expression genes  
+- Selected top ~5000 highly variable genes  
+
+---
+
+### Principal Component Analysis (PCA)
+
+PCA was performed to assess global transcriptional variation and subtype separation.
+
+![PCA Plot](figures/pca_plot.png)
+
+#### Findings:
+- Basal subtype forms a distinct cluster  
+- Luminal A and Luminal B partially overlap  
+- HER2 and Normal lie in intermediate regions  
+
+---
+
+### Differential Expression Analysis
+
+Differential expression was performed using DESeq2 with Luminal A as the reference.
+
+#### Comparisons:
+- Basal vs Luminal A  
+- HER2 vs Luminal A  
+- Luminal B vs Luminal A  
+- Normal vs Luminal A  
+
+#### Thresholds:
+- Adjusted p-value (FDR) < 0.05  
+- |log2 Fold Change| > 1  
+
+---
+
+### Volcano Plot (Basal vs Luminal A)
+
+![Volcano Plot](figures/final/volcano_Basal_vs_LumA.png)
+
+#### Key observations:
+- Strong differential expression signal  
+- Upregulated: FOXC1, SOX8  
+- Downregulated: ESR1, PGR, GATA3  
+
+---
+
+### Gene Ontology (GO) Enrichment
+
+![GO Enrichment](figures/enrichment/GO_BP_dotplot_Basal_vs_LumA.png)
+
+#### Enriched processes:
+- Mammary gland development  
+- miRNA regulation  
+- Hormone signaling pathways  
+
+---
+
+## Results Summary
+
+- Basal subtype shows strongest transcriptional divergence  
+- Luminal B shows proliferation-related differences  
+- HER2 shows signaling-driven changes  
+- Normal is closest to Luminal A  
 
 ---
 
 ## Project Structure
 
-tcga-rna-seq-breast-cancer/  
-│── scripts/  
-│── data/  
-│── results/  
-│── figures/  
-│── README.md  
+data/  
+&nbsp;&nbsp;&nbsp;&nbsp;raw/  
+&nbsp;&nbsp;&nbsp;&nbsp;processed/  
+
+figures/  
+&nbsp;&nbsp;&nbsp;&nbsp;enrichment/  
+&nbsp;&nbsp;&nbsp;&nbsp;final/  
+
+results/  
+&nbsp;&nbsp;&nbsp;&nbsp;deseq2/  
+&nbsp;&nbsp;&nbsp;&nbsp;biological/  
+&nbsp;&nbsp;&nbsp;&nbsp;enrichment/  
+&nbsp;&nbsp;&nbsp;&nbsp;qc/  
+
+scripts/  
+
+README.md  
+environment.yml  
 
 ---
 
-## Workflow Details
+## Reproducibility
 
-### 1️⃣ Data Preprocessing
-- Load TCGA RNA-seq count matrix and clinical metadata  
-- Normalize gene expression counts  
+```bash
+conda env create -f environment.yml
+conda activate tcga-rnaseq-deseq2
 
-### 2️⃣ Differential Expression Analysis
-- Perform DESeq2 analysis across breast cancer subtypes  
-- Identify significantly differentially expressed genes  
+## Data Access
 
-### 3️⃣ Visualization
-- PCA plot for sample clustering  
-- Volcano plot for differential expression  
+TCGA data can be downloaded from:
+https://xena.ucsc.edu/
+```
 
-### 4️⃣ Functional Enrichment
-- Gene Ontology (GO) enrichment  
-- Pathway analysis using clusterProfiler  
-
----
-
-## Status
-
-This project is currently in progress. The analysis pipeline structure is implemented, and differential expression and enrichment analyses are being developed.
-
----
-
-## Expected Outputs
-
-- List of differentially expressed genes  
-- PCA plot showing subtype separation  
-- Volcano plot of gene expression changes  
-- Enriched biological pathways  
-
----
-
-## Tools & Technologies
-
-- R: DESeq2, clusterProfiler, ggplot2  
-- Python: pandas, NumPy  
-
----
 
 ## Skills Demonstrated
 
