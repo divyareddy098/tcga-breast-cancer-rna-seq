@@ -73,5 +73,5 @@ write.csv(
   row.names = FALSE
 )
 
-message("✅ Top gene summary complete")
+message("Top gene summary complete")
 message("Saved outputs in results/biological/")

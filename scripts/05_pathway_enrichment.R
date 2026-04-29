@@ -60,6 +60,6 @@ for (comp in comparisons) {
   }
 }
 
-message("✅ Pathway enrichment complete")
+message("Pathway enrichment complete")
 message("Saved tables in results/enrichment/")
 message("Saved plots in figures/enrichment/")

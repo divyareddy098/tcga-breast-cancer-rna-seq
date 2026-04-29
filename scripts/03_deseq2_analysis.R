@@ -164,7 +164,7 @@ for (comp in comparisons) {
 
 write.csv(summary_table, "results/deseq2/deseq2_summary_strict.csv", row.names = FALSE)
 
-message("✅ Advanced DESeq2 analysis complete")
+message("Advanced DESeq2 analysis complete")
 print(summary_table)
 message("Saved strict DEG results in results/deseq2/")
 message("Saved PCA and volcano plots in figures/")
