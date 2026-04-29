@@ -86,7 +86,7 @@ write.csv(sample_qc, "results/sample_qc_summary.csv", row.names = FALSE)
 write.csv(gene_qc, "results/gene_qc_summary.csv", row.names = FALSE)
 write.csv(subtype_counts, "results/subtype_counts.csv", row.names = FALSE)
 
-message("✅ DONE")
+message("DONE")
 message("Genes retained: ", nrow(counts_filtered))
 message("Samples retained: ", ncol(counts_filtered))
 print(subtype_counts)
