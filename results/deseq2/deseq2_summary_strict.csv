@@ -1,0 +1,5 @@
+"Comparison","Padj_Cutoff","Log2FC_Cutoff","Significant_DEGs","Upregulated","Downregulated"
+"Basal_vs_LumA",0.01,1.5,6109,3669,2440
+"Her2_vs_LumA",0.01,1.5,3175,1674,1501
+"LumB_vs_LumA",0.01,1.5,784,277,507
+"Normal_vs_LumA",0.01,1.5,2365,1356,1009

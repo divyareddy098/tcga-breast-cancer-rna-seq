@@ -1,0 +1,18 @@
+# Data (too large)
+data/raw/*
+data/processed/*
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Large files
+*.rds
+*.csv
+*.tsv
+
+# But allow small result CSVs
+!results/**/*.csv
+
+# System
+.DS_Store
